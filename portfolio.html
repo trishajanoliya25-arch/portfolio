@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trisha Janoliya – Full-Stack Web Developer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#f6f7f9;--surface:#fff;--ink:#14283c;--muted:#56657a;--line:#dde2ea;--accent:#0e7c86;--accent-ink:#fff;--soft:#e3f2f3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a26;--surface:#172536;--ink:#eaf0f7;--muted:#9fb0c4;--line:#273a50;--accent:#4fc3cc;--accent-ink:#0f1a26;--soft:#16323a}}
+:root[data-theme="dark"]{--bg:#0f1a26;--surface:#172536;--ink:#eaf0f7;--muted:#9fb0c4;--line:#273a50;--accent:#4fc3cc;--accent-ink:#0f1a26;--soft:#16323a}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+nav{display:flex;gap:18px;justify-content:space-between;align-items:center;padding:18px 0;flex-wrap:wrap}
+nav .links{display:flex;gap:18px;flex-wrap:wrap;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+nav .logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:56px 0 72px}
+.hero h1{font-size:clamp(2.6rem,8vw,5rem);font-weight:800;letter-spacing:-.03em}
+.hero .role{font-size:1.25rem;color:var(--accent);font-weight:700;margin:14px 0 18px}
+.hero p{color:var(--muted);max-width:46ch;margin:0 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--ink)}
+.btn:hover{filter:brightness(1.08)}
+.todo{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px}
+.todo h3{font-size:1.1rem;margin-bottom:4px}
+.todo small{color:var(--muted);display:block;margin-bottom:14px}
+.todo .row{display:flex;gap:8px}
+.todo input[type=text]{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+.todo button.add{padding:10px 14px;border:0;border-radius:8px;background:var(--accent);color:var(--accent-ink);font-weight:700;cursor:pointer;font:inherit;font-weight:700}
+.todo ul{list-style:none;margin:14px 0 0;padding:0}
+.todo li{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
+.todo li.done span{text-decoration:line-through;color:var(--muted)}
+.todo li span{flex:1}
+.todo li button{background:none;border:0;color:var(--muted);cursor:pointer;font-size:1.1rem}
+section{padding:56px 0;border-top:1px solid var(--line)}
+section>h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:26px;letter-spacing:-.02em}
+.about{max-width:62ch;color:var(--muted);font-size:1.1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font-size:1.2rem;margin-bottom:8px}
+.card p,.card li{color:var(--muted);margin:0}
+.card ul{margin:0;padding-left:18px}
+.skill h3{font-size:1rem;color:var(--accent);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--soft);color:var(--ink);padding:4px 11px;border-radius:999px;font-size:.92rem;font-weight:500}
+.project a{display:inline-block;margin-top:14px;font-weight:700;color:var(--accent)}
+.tl{display:grid;gap:18px}
+.job{display:grid;grid-template-columns:150px 1fr;gap:20px}
+.job .when{color:var(--muted);font-weight:500}
+.job h3{font-size:1.2rem;margin-bottom:6px}
+.job ul{margin:0;padding-left:18px;color:var(--muted)}
+.edu{display:grid;gap:14px}
+.edu .card{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.edu .grade{font-weight:700;color:var(--accent)}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.contact a{display:block;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface);text-decoration:none;font-weight:500;overflow-wrap:anywhere}
+.contact a span{display:block;color:var(--muted);font-size:.85rem;font-weight:400}
+.contact a:hover{border-color:var(--accent)}
+footer{padding:30px 0 40px;color:var(--muted);font-size:.92rem;border-top:1px solid var(--line)}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:30px}.job{grid-template-columns:1fr;gap:4px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main">
+  <a class="logo" href="#top">TJ</a>
+  <div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <h1>Trisha Janoliya</h1>
+    <div class="role">Full-Stack Web Developer</div>
+    <p>BCA student who builds small, working web apps with React, JavaScript and Node.js, and wants to ship more of them with a team.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+  <div class="todo" aria-label="Working to-do demo">
+    <h3>Try my To-Do app</h3>
+    <small>A tiny version of one of my React projects. Add, tick off, remove.</small>
+    <div class="row">
+      <input type="text" id="t" placeholder="Add a task" aria-label="New task">
+      <button class="add" id="add">Add</button>
+    </div>
+    <ul id="list"></ul>
+  </div>
+</header>
+
+<section id="about">
+  <h2>About me</h2>
+  <p class="about">I'm a BCA student with a strong interest in full-stack web development. I build with HTML, CSS, JavaScript and React, and I'm comfortable with reusable components, DOM manipulation, APIs and browser local storage. I like learning by building, and I'm looking to contribute to collaborative projects.</p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card skill"><h3>Frontend</h3><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">React.js</span><span class="chip">JSX</span><span class="chip">Responsive design</span></div></div>
+    <div class="card skill"><h3>Backend</h3><div class="chips"><span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">REST APIs</span><span class="chip">MongoDB</span><span class="chip">Mongoose</span><span class="chip">Postman</span></div></div>
+    <div class="card skill"><h3>Languages and data</h3><div class="chips"><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">DBMS</span><span class="chip">DSA</span></div></div>
+    <div class="card skill"><h3>Web concepts</h3><div class="chips"><span class="chip">DOM manipulation</span><span class="chip">React props</span><span class="chip">useState</span><span class="chip">API integration</span><span class="chip">localStorage</span></div></div>
+    <div class="card skill"><h3>Tools</h3><div class="chips"><span class="chip">VS Code</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Postman</span></div></div>
+    <div class="card skill"><h3>Working style</h3><div class="chips"><span class="chip">Communication</span><span class="chip">Teamwork</span><span class="chip">Problem-solving</span><span class="chip">Time management</span><span class="chip">Quick learning</span></div></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card project"><h3>Student Profile and Course Portal</h3><p>A student portal built with HTML, CSS and JavaScript, with pages for student profiles and course information.</p><div class="chips" style="margin-top:12px"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div><a href="https://github.com/trishajanoliya25-arch">View on GitHub</a></div>
+    <div class="card project"><h3>React Profile Card</h3><p>Reusable profile card components that take their data through props.</p><div class="chips" style="margin-top:12px"><span class="chip">React</span><span class="chip">JSX</span><span class="chip">Props</span></div><a href="https://github.com/trishajanoliya25-arch">View on GitHub</a></div>
+    <div class="card project"><h3>React To-Do App</h3><p>A task manager that uses the useState hook to manage state and update the interface.</p><div class="chips" style="margin-top:12px"><span class="chip">React</span><span class="chip">useState</span></div><a href="#top">Try the demo above</a></div>
+    <div class="card project"><h3>JavaScript Mini Projects</h3><p>Small apps using DOM manipulation, APIs and localStorage.</p><div class="chips" style="margin-top:12px"><span class="chip">JavaScript</span><span class="chip">APIs</span><span class="chip">localStorage</span></div><a href="https://github.com/trishajanoliya25-arch">View on GitHub</a></div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="tl">
+    <div class="job"><div class="when">August 2026 – present</div><div><h3>KPMG, Intern</h3><ul><li>Working in a professional corporate environment.</li><li>Building teamwork, communication and professional work habits alongside experienced colleagues.</li></ul></div></div>
+    <div class="job"><div class="when">Completed May 2026</div><div><h3>Younger Founder School (YFS), Intern</h3><ul><li>Took part in practical activities and project-based learning.</li><li>Strengthened problem-solving and collaboration skills.</li></ul></div></div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="edu">
+    <div class="card"><div><h3>Bachelor of Computer Applications (BCA)</h3><p>Akal College of Technology and Engineering, Eternal University, Himachal Pradesh</p></div><div class="grade">2025–2029, in progress</div></div>
+    <div class="card"><div><h3>Class XII, Higher Secondary</h3><p>Chimna Bai Higher Secondary School, Dewas, Madhya Pradesh</p></div><div class="grade">336/500 (67.2%), Grade A</div></div>
+    <div class="card"><div><h3>Class X, Secondary</h3><p>Chimna Bai Higher Secondary School, Dewas, Madhya Pradesh</p></div><div class="grade">355/500 (71%), Grade A</div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Let's talk</h2>
+  <div class="contact">
+    <a href="mailto:trishajanoliya25@navgurukul.org"><span>Email</span>trishajanoliya25@navgurukul.org</a>
+    <a href="tel:+916268949350"><span>Phone</span>6268949350</a>
+    <a href="https://linkedin.com/in/trisha-janoliya-a35527413"><span>LinkedIn</span>trisha-janoliya</a>
+    <a href="https://github.com/trishajanoliya25-arch"><span>GitHub</span>trishajanoliya25-arch</a>
+  </div>
+</section>
+
+<footer>© Trisha Janoliya</footer>
+</div>
+
+<script>
+(function(){
+  var tasks=[{t:"Build my portfolio",d:true},{t:"Practice a DSA problem",d:false}];
+  var list=document.getElementById("list"),inp=document.getElementById("t");
+  function render(){
+    list.innerHTML="";
+    tasks.forEach(function(k,i){
+      var li=document.createElement("li");if(k.d)li.className="done";
+      var cb=document.createElement("input");cb.type="checkbox";cb.checked=k.d;cb.setAttribute("aria-label","Mark done");
+      cb.onchange=function(){k.d=cb.checked;render()};
+      var s=document.createElement("span");s.textContent=k.t;
+      var x=document.createElement("button");x.textContent="\u00d7";x.setAttribute("aria-label","Remove task");
+      x.onclick=function(){tasks.splice(i,1);render()};
+      li.appendChild(cb);li.appendChild(s);li.appendChild(x);list.appendChild(li);
+    });
+  }
+  function add(){var v=inp.value.trim();if(!v)return;tasks.push({t:v,d:false});inp.value="";render();}
+  document.getElementById("add").onclick=add;
+  inp.addEventListener("keydown",function(e){if(e.key==="Enter")add();});
+  render();
+})();
+</script>
+</body>
+</html>
